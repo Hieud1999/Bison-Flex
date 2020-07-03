@@ -41,13 +41,13 @@ Expression:
 	VAR PLUS NUMBER { checkVarName($1); value = value + $3; }
 	| VAR MINUS NUMBER { checkVarName($1); value = value - $3; }
 	| VAR MULT NUMBER { checkVarName($1); value = value * $3; }
-    | VAR DIV NUMBER { 
-        checkVarName($1); 
-        if ($3 == 0) {
-            printf("INFINITY");
-            exit(1);
-        };
-        value = value / $3; }
+    	| VAR DIV NUMBER { 
+		checkVarName($1); 
+        	if ($3 == 0) {
+			printf("INFINITY");
+			exit(1);
+		};
+		value = value / $3; }
 ;
 ;
 %%
