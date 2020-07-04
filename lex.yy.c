@@ -285,15 +285,15 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 10
-#define YY_END_OF_BUFFER 11
+#define YY_NUM_RULES 11
+#define YY_END_OF_BUFFER 12
 static yyconst short int yy_accept[47] =
     {   0,
-        0,    0,   11,    9,    1,   10,    7,    5,    6,    8,
-        3,    4,    2,    1,    3,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,    2,    2,    2,    2,    2,    2,
-        2,    2,    2,    2,    2,    0
+        0,    0,   12,   10,    2,    1,    8,    6,    7,    9,
+        4,    5,    3,    2,    4,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    3,    3,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -546,7 +546,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 13 "compiler.l"
+#line 14 "compiler.l"
 
 
 #line 553 "lex.yy.c"
@@ -634,57 +634,62 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 15 "compiler.l"
-
+#line 16 "compiler.l"
+{return NEWLINE;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 16 "compiler.l"
-{sscanf(yytext, "%s", yylval.varName); return(VAR);}
+#line 17 "compiler.l"
+
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 17 "compiler.l"
+#line 18 "compiler.l"
+{sscanf(yytext, "%s", yylval.varName); return(VAR);}
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 19 "compiler.l"
 { yylval.val=atoi(yytext);
  return NUMBER;
 }
 	YY_BREAK
-case 4:
-YY_RULE_SETUP
-#line 20 "compiler.l"
-{return EQUAL;}
-	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 21 "compiler.l"
-{return PLUS;}
+#line 22 "compiler.l"
+{return EQUAL;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 22 "compiler.l"
-{return MINUS;}
+#line 23 "compiler.l"
+{return PLUS;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 23 "compiler.l"
-{return MULT;}
+#line 24 "compiler.l"
+{return MINUS;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 24 "compiler.l"
-{return DIV;}
+#line 25 "compiler.l"
+{return MULT;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 25 "compiler.l"
-{printf("Operation does not exist\n"); exit(1);}
+#line 26 "compiler.l"
+{return DIV;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 26 "compiler.l"
+#line 27 "compiler.l"
+{printf("Operation does not exist\n"); exit(1);}
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 28 "compiler.l"
 ECHO;
 	YY_BREAK
-#line 688 "lex.yy.c"
+#line 693 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1570,6 +1575,6 @@ int main()
 	return 0;
 	}
 #endif
-#line 26 "compiler.l"
+#line 28 "compiler.l"
 
 

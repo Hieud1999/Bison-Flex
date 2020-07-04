@@ -45,7 +45,8 @@
      PLUS = 261,
      MINUS = 262,
      MULT = 263,
-     DIV = 264
+     DIV = 264,
+     NEWLINE = 265
    };
 #endif
 
@@ -64,7 +65,7 @@ typedef union YYSTYPE
 
 
 /* Line 1676 of yacc.c  */
-#line 68 "compiler.tab.h"
+#line 69 "compiler.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

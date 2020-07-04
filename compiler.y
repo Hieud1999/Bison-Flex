@@ -18,6 +18,7 @@ int value;
 %token NUMBER
 %token VAR
 %token EQUAL PLUS MINUS MULT DIV
+%token NEWLINE
 
 %type<val> NUMBER Declaration Expression
 %type<varName> VAR
@@ -34,7 +35,7 @@ Line:
 ;
 
 Declaration:
-	VAR EQUAL NUMBER {sscanf($1, "%s", var); value = $3;}
+	VAR EQUAL NUMBER NEWLINE {sscanf($1, "%s", var); value = $3;}
 ;
 
 Expression:
