@@ -6,12 +6,12 @@
 void yyerror (char const *s);
 int yylex();
 int checkVarName(char *s);
-char var[20];
+char var[100];
 int value;
 %}
 
 %union {
-    char varName[20];
+    char varName[100];
     int val;
 }
 

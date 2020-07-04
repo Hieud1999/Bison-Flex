@@ -77,7 +77,7 @@
 void yyerror (char const *s);
 int yylex();
 int checkVarName(char *s);
-char var[20];
+char var[100];
 int value;
 
 
@@ -129,7 +129,7 @@ typedef union YYSTYPE
 /* Line 214 of yacc.c  */
 #line 13 "compiler.y"
 
-    char varName[20];
+    char varName[100];
     int val;
 
 
@@ -1372,12 +1372,12 @@ yyreduce:
 /* Line 1455 of yacc.c  */
 #line 45 "compiler.y"
     { 
-        checkVarName((yyvsp[(1) - (3)].varName)); 
-        if ((yyvsp[(3) - (3)].val) == 0) {
-            printf("INFINITY");
-            exit(1);
-        };
-        value = value / (yyvsp[(3) - (3)].val); ;}
+		checkVarName((yyvsp[(1) - (3)].varName)); 
+        	if ((yyvsp[(3) - (3)].val) == 0) {
+			printf("INFINITY");
+			exit(1);
+		};
+		value = value / (yyvsp[(3) - (3)].val); ;}
     break;
 
 
@@ -1617,3 +1617,4 @@ int main() {
 //   else
 //      fprintf(stderr, "error found.\n");
 }
+

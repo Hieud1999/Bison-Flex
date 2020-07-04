@@ -59,7 +59,7 @@ typedef union YYSTYPE
 /* Line 1676 of yacc.c  */
 #line 13 "compiler.y"
 
-    char varName[20];
+    char varName[100];
     int val;
 
 

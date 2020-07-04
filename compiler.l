@@ -8,7 +8,7 @@
 
 newline [\n]
 whitespace [ \t]+
-variable [_a-zA-Z][_a-zA-Z0-9]{0,30}
+variable [_a-zA-Z][_a-zA-Z0-9]{0,100}
 integer [0-9]+
 
 %%
